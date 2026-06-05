@@ -237,6 +237,9 @@
         font-size: 44px;
         line-height: 1;
         white-space: nowrap;
+      }
+
+      .milestone.active .milestone-train {
         animation: milestone-train 1800ms cubic-bezier(0.16, 1, 0.3, 1) both;
       }
 
@@ -348,7 +351,7 @@
         .hero,
         .train-emoji:hover,
         .milestone.active,
-        .milestone-train {
+        .milestone.active .milestone-train {
           animation: none;
           transition: none;
         }
@@ -357,7 +360,7 @@
           opacity: 1;
         }
 
-        .milestone-train {
+        .milestone.active .milestone-train {
           left: 50%;
           transform: translateX(-50%);
         }
