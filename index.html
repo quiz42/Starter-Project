@@ -730,8 +730,15 @@
         syncThemeButton();
       });
 
+      function isButtonKeyTarget(target) {
+        return target instanceof HTMLButtonElement;
+      }
+
       window.addEventListener("keydown", (event) => {
-        if (event.code === "Space" || event.code === "Enter") {
+        if (
+          (event.code === "Space" || event.code === "Enter") &&
+          !isButtonKeyTarget(event.target)
+        ) {
           event.preventDefault();
           dispatchTrain();
         } else if (event.key === "m" || event.key === "M") {
